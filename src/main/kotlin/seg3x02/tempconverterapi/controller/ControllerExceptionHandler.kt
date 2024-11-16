@@ -11,6 +11,6 @@ class ControllerExceptionHandler {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     fun handleException(ex: Exception): ResponseEntity<String> {
-        return ResponseEntity.badRequest().body("Unable to process request")
+        return ResponseEntity.badRequest().body(ex.message)
     }
 }
